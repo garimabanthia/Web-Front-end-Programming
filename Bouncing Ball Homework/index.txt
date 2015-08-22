@@ -1,0 +1,71 @@
+<script>
+var context;
+var x=100;
+var y=200;
+var dx=5;
+var dy=5;
+var myVar;
+
+
+function init()
+{
+  context= myCanvas.getContext('2d');
+  context.beginPath();
+start();
+ 
+}
+
+function stop() {
+clearInterval(myVar)
+document.getElementById("stopBtn").disabled = true;
+document.getElementById("startBtn").disabled = false;
+}
+
+function start() {
+myVar = setInterval(draw, 10);
+document.getElementById("startBtn").disabled = true;
+document.getElementById("stopBtn").disabled = false;
+ 
+
+}
+
+function draw()
+{
+  context.clearRect(0,0, 300,300);
+  context.beginPath();
+  
+  // Draws a circle of radius 20 at the coordinates 100,100 on the canvas
+  context.arc(x,y,20,0,Math.PI*2,true);
+  context.closePath();
+  context.fill();
+  // Boundary Logic
+if( x<0 || x>300){
+ dx=-dx;
+context.fillStyle="#0000ff";
+}
+if( y<0 || y>300) {
+ dy=-dy; 
+context.fillStyle="#ff0000";
+
+}
+x+=-dx; 
+y+=-dy;
+
+}
+
+</script>
+
+<!DOCTYPE html>
+<html>
+
+<body onLoad="init();">
+ <canvas id="myCanvas" width="300" height="300" >
+  </canvas>
+
+
+<body background="img1.jpg">
+
+<button id ="startBtn" onclick="start()">Start</button>
+<button id ="stopBtn" onclick="stop()">Stop</button>
+
+</html>

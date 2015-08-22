@@ -1,0 +1,245 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>Online clothing shopping</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="./css/style.css" rel="stylesheet" type="text/css" media="all" />
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js">
+<script src="c:/Users/Garima/Desktop/new.js"></script>
+</head>
+
+<body>
+<!-- start header -->
+<div class="top_bg">
+<div class="wrap">
+	<div class="header" >
+		<div class="logo">
+			<a href="index.html"><img src="./images/logo.png" alt="#"/></a>
+		</div>
+		 <div class="log_reg">
+				<ul>
+					<li><a href="signIn.html">Login</a> </li>
+					<span class="log"> or </span>
+					<li><a href="Registration.html">Register</a> </li>								   
+					<div class="clear"></div>
+				</ul>
+		</div>							
+		<div class="clear"></div>
+	</div>	
+</div>
+</div>
+<!-- start header_btm -->
+<div class="wrap">
+<div class="header_btm">
+		<div class="menu">
+			<ul>
+				<li class="active"><a href="index.html">Home</a></li>
+				<li><a href="#">Clothing</a>
+				<ul>
+				    <li><a href="./men/men.html">Men</a></li>
+				    <li><a href="./women/Women.html">Women</a></li>
+                </ul> 
+				</li>
+				<li><a href="aboutus.html">About</a></li>
+				<li><a href="contactus.html">Contact</a></li>
+				<div class="clear"></div>
+			</ul>
+		</div>			
+	<div class="header_right">
+		<ul>
+			<li><a href="cart.html"><i  class="cart"></i><span onLoad= "cartLength()"></span></a></li>
+		</ul>
+	</div>
+	<div class="clear"></div>
+</div>
+</div><!-- start slider -->
+<!-- <div class="wrap">
+<div class="slider">
+	<img src="./images/3.png" alt=""/>
+	 <div class="ei-title">
+         <h3 class="btn">$145.99</h3>
+         <a href="#"><h2 >Hello!!<br>	2015 collections</h2></a>
+         <h3 class="active">Onlline Clothing Shopping<br>
+             For spring season welcomes you!! 
+         </h3>
+    </div> -->
+	
+	<style>
+	
+	</style>
+	
+	<script>
+	
+
+$(function() {
+
+    //settings for slider
+    var width = 720;
+    var animationSpeed = 1000;
+    var pause = 3000;
+    var currentSlide = 1;
+
+    //cache DOM elements
+    var $slider = $('#slider1');
+    var $slideContainer = $('.slides', $slider);
+    var $slides = $('.slide', $slider);
+
+    var interval;
+
+    function startSlider() {
+        interval = setInterval(function() {
+            $slideContainer.animate({'margin-left': '-='+width}, animationSpeed, function() {
+                if (++currentSlide === $slides.length) {
+                    currentSlide = 1;
+                    $slideContainer.css('margin-left', 0);
+                }
+            });
+        }, pause);
+    }
+    function pauseSlider() {
+        clearInterval(interval);
+    }
+
+    $slideContainer
+        .on('mouseenter', pauseSlider)
+        .on('mouseleave', startSlider);
+
+    startSlider();
+
+
+});
+
+	</script>
+	<div class="wrap">
+	               
+           
+
+            <div id="slider1">
+                <ul class="slides">
+                    <li class="slide slide1"><img src = "./images/slideimage.jpg " width= "740px" height ="370 px"/></li>
+                    <li class="slide slide2"><img src = "./images/3.png"  width= "740px" height ="370 px"/></li>
+                    <li class="slide slide3"><img src = "./images/slideimage1.jpg"  width= "740px" height ="370 px"/></li>
+                    <li class="slide slide4"><img src = "./images/slideimage2.jpg"  width= "740px" height ="370 px"/></li>
+                    <li class="slide slide1"><img src = "./images/slideimage.jpg " width= "740px" height ="370 px"/></li>
+					
+                </ul>
+           
+
+        </div>
+</div>
+</div>
+<div class="top_bg">
+<div class="wrap">
+<div class="main1">
+	<div class="image1_of_3">
+		<img src="./images/front.jpg" alt=""width="200" height="255"/>
+	    <a href="./men/men.html"><span class="tag">on sale</span></a>
+	</div>
+	<div class="image1_of_3">
+		<img src="./images/1.jpg" alt="" width="200" height="255"/>
+		<a href="./men/men.html"><span class="tag">special offers</span></a>
+	</div>
+	<div class="image1_of_3">
+		<img src="./images/front3.jpg" alt="" width="200" height="255"/>
+		<a href="./men/men.html"><span class="tag">must have</span></a>
+		
+
+	</div>
+	<div class="clear"></div>
+</div>
+</div>
+</div>
+<!-- start main -->
+<div class="main_bg">
+<div class="wrap">
+<div class="main">
+	<div class="top_main">
+		<h2>New coming</h2>
+		<a href="#">show all</a>
+		<div class="clear"></div>
+	</div>
+	<!-- start grids_of_3 -->
+	<div class="grids_of_3">
+		<div class="grid1_of_3">
+			<a href="./women/Women.html">
+				<img src="./images/front4.jpg" alt=""width="300" height="350"/>
+				<h3>Beautiful Red Color dress</h3>
+				<span class="price">$500</span>
+			</a>
+		</div>
+		<div class="grid1_of_3">
+			<a href="./men/men.html">
+				<img src="./images/front5.jpg" alt=""width="300" height="350"/>
+				<h3>Sherwani</h3>
+				<span class="price">$450.99</span>
+				<span class="price1 bg">on sale</span>
+			</a>
+		</div>
+		<div class="grid1_of_3">
+			<a href="./women/Women.html">
+				<img src="./images/front6.jpg" alt=""width="300" height="350"/>
+				<h3>Beautiful Bridal Dress</h3>
+				<span class="price">$1000</span>
+			</a>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="top_main">
+		<h2>Best seller</h2>
+		<a href="#">show all</a>
+		<div class="clear"></div>
+	</div>
+	<!-- start grids_of_3 -->
+	<div class="grids_of_3">
+		<div class="grid1_of_3">
+			<a href="./women/Women.html">
+				<img src="./images/5.jpg" alt="" width="300" height="350"/>
+				<h3>........cool summer Elephant print top</h3>
+				<span class="price">$45.99</span>
+			</a>
+		</div>
+		<div class="grid1_of_3">
+			<a href="./women/Women.html">
+				<img src="./images/girltop.jpg" alt="" width="300" height="350"/>
+				<h3>Multicolor top</h3>
+				<span class="price">$145.99</span>
+			</a>
+		</div>
+		<div class="grid1_of_3">
+			<a href="#">
+				<img src="./images/boyTee.jpg" alt="" width="300" height="350"/>
+				<h3>...Cool T shirt for summer</h3>
+				<span class="price">$25.99</span>
+				<span class="price1 bg1">out of stock</span>
+			</a>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="clear"></div>
+	<!-- start grids_of_2 -->
+	
+</div>
+</div>
+</div>
+<div class="footer_bg">
+<div class="wrap">
+<div class="footer">
+	<div class="f_nav1">
+		<ul>
+			<li><a href="index.html">home /</a></li>
+			<li><a href="aboutus.html">About /</a></li>
+			<li><a href="termsAndCondition.html">Terms and conditions /</a></li>
+			<li><a href="faq.html">Faqs /</a></li>
+			<li><a href="contactus.html">Contact us</a></li>
+		</ul>
+		</div>
+	<div class="copy">
+		<p class="link"><span>© All rights reserved</span></p>
+	</div>
+	<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

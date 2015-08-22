@@ -1,0 +1,163 @@
+<html>
+<head>
+<title>Online clothing shopping</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="./css/style.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+
+<!-- start header -->
+<div class="top_bg">
+<div class="wrap">
+	<div class="header" >
+		<div class="logo">
+			<a href="index.html"><img src="./images/logo.png" alt=""/></a>
+		</div>
+		 <div class="log_reg">
+				<ul>
+					<li><a href="signIn.html">Login</a> </li>
+					<span class="log"> or </span>
+					<li><a href="Registration.html">Register</a> </li>								   
+					<span class="log"> or </span>
+
+					<li><a href="signin.html">Logout</a> </li>								   
+					<div class="clear"></div>
+<li><a href="signin.html">Logout</a> </li>								   
+					<div class="clear"></div>
+				</ul>
+		</div>							
+		<div class="clear"></div>
+	</div>	
+</div>
+</div>
+<!-- start header_btm -->
+<div class="wrap">
+<div class="header_btm">
+		<div class="menu">
+			<ul>
+				<li class="active"><a href="index.html">Home</a></li>
+				<li><a href="#">Clothing</a>
+				<ul>
+				    <li><a href="./men/men.html">Men</a></li>
+				    <li><a href="./women/Women.html">Women</a></li>
+                </ul> 
+				</li>
+				<li><a href="aboutus.html">About</a></li>
+				<li><a href="contactus.html">Contact</a></li>
+				<div class="clear"></div>
+			</ul>
+		</div>			
+	<div class="header_right">
+		<ul>
+			<li><a href="cart.html"><i  class="cart"></i><span onLoad= "cartLength()"></span></a></li>
+		</ul>
+	</div>
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+function sendemail() {
+
+			var db1 = openDatabase('contactdb', '1.0', 'contact DB', 2 * 1024 * 1024);
+
+			var msg;
+			var fname = document.getElementById("name").value;
+			var emailid = document.getElementById("email").value;
+			var msg = document.getElementById("message").value;
+			
+			
+				
+			db1.transaction(function (tx) {
+			    tx.executeSql('CREATE TABLE IF NOT EXISTS contactTable1 (name, email, message)');
+				
+				tx.executeSql('INSERT INTO contactTable1 (name, email, message) VALUES ("'+fname+ '", "'+emailid+'", "'+msg+'")');
+				
+				
+				//msg = '<p><b>Log message created and row inserted <p><b>\n';
+				
+				
+			});
+			
+			db1.transaction(function (tx) {
+				alert("BEFORE SELECT");
+				tx.executeSql('SELECT * FROM contactTable1', [], function (tx, results) {
+					var len = results.rows.length;
+					var i;
+					msg = "Found rows: " + len + " ";
+					alert(msg);
+					//document.querySelector('#status').innerHTML +=  msg;
+					for (i = 0; i < len; i++) {
+msg = "<p><b>" + results.rows.item(i).name + "-"+results.rows.item(i).email + "- " + results.rows.item(i).message + "</b></p> ";
+						
+						alert(msg);
+						//document.querySelector('#status').innerHTML =  msg;
+
+					}
+				}, null);
+
+			});
+
+
+		//end of the function
+		
+}
+
+
+</script>
+<form  method="POST">
+
+<!--<form name="myForm" action="contact.html"
+onsubmit="return sendemail()" method="post">-->
+
+	<div class="row">
+		<label for="name">Your name:</label><br />
+		<input id="name" class="input" name="name" type="text" value="" size="30" pattern="[a-zA-Z]{2,}" placeholder="your name" title="Must have at least 2 characters of alphabet" maxlength="50" required/><br />
+	</div>
+	<div class="row">
+		<label for="email">Your email:*</label><br />
+		<input id="email" type="email" pattern="\w.*+\@+[a-z]+\.[a-z]{2,7}" title="Must include @." placeholder="example@domain.com" required/><br />
+	</div>
+	<div class="row">
+		<label for="message">Your message:</label><br />
+		<textarea id="message" class="input" name="message" rows="7" cols="30" required></textarea><br />
+	</div>
+
+<div id="result1"></div>
+
+<input type="button" value="send email" onclick="sendemail()"/>
+<button type="reset" value="Reset">Reset</button>
+<a href="contact.html">next</a>
+
+
+
+	
+
+
+
+<br>
+<br>
+<h3>For LiveChat <a href=http://npuchat.herokuapp.com/>ClickHere</a></h3>
+<br>
+<br>
+
+<br>
+<br>
+<div class="footer_bg">
+<div class="wrap">
+<div class="footer">
+	<div class="f_nav1">
+		<ul>
+			<li><a href="index.html">home /</a></li>
+			<li><a href="aboutus.html">About /</a></li>
+			<li><a href="termsAndCondition.html">Terms and conditions /</a></li>
+			<li><a href="faq.html">Faqs /</a></li>
+			<li><a href="contactus.html">Contact us</a></li>
+		</ul>
+		</div>
+	<div class="copy">
+		<p class="link"><span>© All rights reserved | &&&&</span></p>
+	</div>
+	<div class="clear"></div>
+</div>
+</form>
+</body>
+</html>						

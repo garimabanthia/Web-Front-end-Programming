@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Online clothing shopping</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="./css/style.css" rel="stylesheet" type="text/css" media="all" />
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js">
+<script src="c:/Users/Garima/Desktop/new.js"></script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+         
+         <script>
+                    $(document).ready(function() {
+                        if (localStorage) {
+                            var ordernum = Math.floor((Math.random() * 701) + 100);
+                            localStorage.setItem('ordernum',ordernum);
+                            document.getElementById('onumber').innerHTML=+ordernum;
+                        }
+                });
+            </script>
+</head>
+<body>
+<!-- start header -->
+<div class="top_bg">
+<div class="wrap">
+	<div class="header" >
+		<div class="logo">
+			<a href="index.html"><img src="./images/logo.png" alt="#"/></a>
+		</div>
+		 <div class="log_reg">
+				<ul>
+					<li><a href="signIn.html">Login</a> </li>
+					<span class="log"> or </span>
+					<li><a href="Registration.html">Register</a> </li>								   
+					<div class="clear"></div>
+				</ul>
+		</div>							
+		<div class="clear"></div>
+	</div>	
+</div>
+</div>
+<!-- start header_btm -->
+<div class="wrap">
+<div class="header_btm">
+		<div class="menu">
+			<ul>
+				<li class="active"><a href="index.html">Home</a></li>
+				<li><a href="#">Clothing</a>
+				<ul>
+				    <li><a href="./men/men.html">Men</a></li>
+				    <li><a href="./women/Women.html">Women</a></li>
+                </ul> 
+				</li>
+				<li><a href="aboutus.html">About</a></li>
+				<li><a href="contactus.html">Contact</a></li>
+				<div class="clear"></div>
+			</ul>
+		</div>			
+	<div class="header_right">
+		<ul>
+			<li><a href="cart.html"><i  class="cart"></i><span onLoad= "cartLength()"></span></a></li>
+		</ul>
+	</div>
+	<div class="clear"></div>
+</div>
+</div>
+
+
+<br>
+<br>
+<br>
+<h8><center>Thank You For Shopping!</h8>
+
+<h6><center>Your Transaction Completed Successfully...</h6>
+<section class="head2">
+            <left><h4 align=center> your order number is : <label id="onumber"></label> </h4></left>
+        </section>
+
+<br>
+<br>
+<br>
+   Want to shop again <a href="index.html">click here</a>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="footer_bg">
+<div class="wrap">
+<div class="footer">
+	<div class="f_nav1">
+		<ul>
+			<li><a href="index.html">home /</a></li>
+			<li><a href="aboutus.html">About /</a></li>
+			<li><a href="termsAndCondition.html">Terms and conditions /</a></li>
+			<li><a href="faq.html">Faqs /</a></li>
+			<li><a href="contactus.html">Contact us</a></li>
+		</ul>
+		</div>
+	<div class="copy">
+		<p class="link"><span>© All rights reserved</span></p>
+	</div>
+	<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

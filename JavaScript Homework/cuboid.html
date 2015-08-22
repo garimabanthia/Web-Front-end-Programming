@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click button for testing Cuboid</p>
+<button type="button" onclick="main()">Test Cuboid</button>
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+	
+	<script>
+	function Cuboid(w1,h1,l1){
+	var w = w1;
+	var h =h1;
+	var l = l1;
+	
+	//Implementor functions
+	this.getW = function(){
+	return w;
+	}
+	this.getH = function(){
+	return h;
+	}
+	this.getL = function(){
+	return l;
+	}
+	this.setW = function(w1){
+	w=w1;
+	}
+	this.setH = function(h1){
+	h=h1;
+	}
+	this.setL1 = function(l1){
+	l=l1;
+	}
+	this.volume = function() {
+	return w*h*l;
+	}
+	this.area = function(){
+	return 2 * (w * h + h *  l + w * l); 
+	}
+	this.isCube = function() {
+	return ( w == h && h == l);
+	}
+}
+function main() {
+var eraser = new Cuboid(6,2,3);
+if (eraser.isCube()) {
+      document.getElementById("demo").innerHTML = "The eraser is a cube";
+   }else {
+      document.getElementById("demo").innerHTML = "The eraser is not a cube";
+   }
+	document.getElementById("demo1").innerHTML = "w =  " + eraser.getW();
+    document.getElementById("demo2").innerHTML = "h = " + eraser.getH();
+	document.getElementById("demo3").innerHTML = "l = " + eraser.getL();
+	document.getElementById("demo4").innerHTML = "volume = " + eraser.volume() ;
+	document.getElementById("demo5").innerHTML = "area = " + eraser.area() ; 
+}
+</script>
+</body>
+</html>
